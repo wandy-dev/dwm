@@ -46,19 +46,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        50,50,500,500,        5 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
-	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
-	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
-	{ NULL,		  "keepassxc",	NULL,		SPTAG(2),		0,			 -1 },
+	/* class      instance    title   tags mask     isfloating    monitor    float x,y,w,h    floatborderpx*/
+	{ "Gimp",     NULL,       NULL,   0,            1,            -1,        50,50,500,500,   5 },
+	{ "Firefox",  NULL,       NULL,   1 << 8,       0,            -1,        50,50,500,500,   5 },
+	{ NULL,       "spterm",   NULL,   SPTAG(0),     1,            -1 },
+	{ NULL,       "spfm",     NULL,   SPTAG(1),     1,            -1 },
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
