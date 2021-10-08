@@ -4,13 +4,23 @@ dwm - dynamic window manager
 ============================
 
 
-dwm is an extremely fast, small, and dynamic window manager for X.
+[dwm](https://dwm.suckless.org/) is an extremely fast, small, and dynamic window manager for X.
 
+This is a fork of https://git.suckless.org/dwm I have applied the following patches to help my workflow.
+
+The following patches have been applied:
+  - [alpha](https://dwm.suckless.org/patches/alpha/)
+  - [autostart](https://dwm.suckless.org/patches/autostart/)
+  - [floatrules](https://dwm.suckless.org/patches/floatrules/)
+  - [scratchpads](https://dwm.suckless.org/patches/scratchpads/)
+  - [swallow](https://dwm.suckless.org/patches/swallow/)
 
 Requirements
 ------------
-In order to build dwm you need the Xlib header files.
-
+In order to build dwm you need the Xlib header files. Additionally the swallow patch requires the following libraries
+  - libxcb
+  - Xlib-libxcb
+  - xcb-res
 
 Installation
 ------------
