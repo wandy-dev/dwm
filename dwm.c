@@ -1938,6 +1938,8 @@ togglescratch(const Arg *arg)
 		selmon->tagset[selmon->seltags] |= scratchtag;
 		spawn(&sparg);
 	}
+}
+
 togglefullscr(const Arg *arg)
 {
   if(selmon->sel)
