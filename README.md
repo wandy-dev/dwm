@@ -9,6 +9,7 @@ dwm - dynamic window manager
 This is a fork of https://git.suckless.org/dwm I have applied the following patches to help my workflow.
 
 The following patches have been applied:
+  - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
   - [alpha](https://dwm.suckless.org/patches/alpha/)
   - [autostart](https://dwm.suckless.org/patches/autostart/)
   - [floatrules](https://dwm.suckless.org/patches/floatrules/)
