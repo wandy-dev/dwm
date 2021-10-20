@@ -11,8 +11,8 @@ static const char dmenufont[]         = "monospace:size=8";
 static const char col_gray1[]         = "#222222";
 static const char col_gray2[]         = "#444444";
 static const char col_gray3[]         = "#bbbbbb";
-static const char col_gray4[]         = "#eeeeee";
-static const char col_cyan[]          = "#A54242";
+static const char col_gray4[]         = "#222222";
+static const char col_cyan[]          = "#BDE077";
 static const unsigned int baralpha    = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
@@ -31,13 +31,11 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
-const char *spcmd3[] = {"keepassxc", NULL };
+const char *spcmd2[] = {"st", "-n", "spqalc", "-g", "144x41", "-e", "qalc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
-	{"spranger",    spcmd2},
-	{"keepassxc",   spcmd3},
+	{"spqalc",        spcmd2},
 };
 
 /* tagging */
@@ -47,14 +45,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        50,50,500,500,        5 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,        50,50,500,500,        5 },
-	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
-	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
-	{ NULL,		  "keepassxc",	NULL,		SPTAG(2),		0,			 -1 },
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class      instance    title           tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
+	{ NULL,       "spterm",		NULL,           SPTAG(0),		  1,			     -1 },
+	{ NULL,       "spqalc",	  NULL,           SPTAG(1),		  1,			     -1 },
+	{ "St",       NULL,       NULL,           0,            0,           1,         0,        -1 },
+	{ NULL,       NULL,       "Event Tester", 0,            0,           0,         1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -113,9 +108,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,            			      XK_y,  	   togglescratch,  {.ui = 0 } },
+	{ MODKEY|ShiftMask,  			      XK_s,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			      XK_u,      togglescratch,  {.ui = 1 } },
-	{ MODKEY,            			      XK_x,      togglescratch,  {.ui = 2 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
