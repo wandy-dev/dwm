@@ -12,7 +12,7 @@ static const char col_gray1[]         = "#222222";
 static const char col_gray2[]         = "#444444";
 static const char col_gray3[]         = "#bbbbbb";
 static const char col_gray4[]         = "#222222";
-static const char col_cyan[]          = "#BDE077";
+static const char col_cyan[]          = "#A54242";
 static const unsigned int baralpha    = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
@@ -46,6 +46,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title           tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
+  { "Slack",    NULL,       NULL,           1 << 2,            0,           -1 },
 	{ NULL,       "spterm",		NULL,           SPTAG(0),		  1,			     -1 },
 	{ NULL,       "spqalc",	  NULL,           SPTAG(1),		  1,			     -1 },
 	{ "St",       NULL,       NULL,           0,            0,           1,         0,        -1 },
